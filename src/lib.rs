@@ -204,9 +204,6 @@ fn from_derive_input(i: syn::DeriveInput) -> syn::Result<syn::ItemMod> {
             delim_token!(Brace),
             vec![
                 syn::Item::Use(syn::parse2(quote! { use super::*; })?),
-                syn::Item::Use(syn::parse2(
-                    quote! { use ::breadth_first_zip::BreadthFirstZip; },
-                )?),
                 make_trivial_prop(&i.ident, &i.generics)?,
                 syn::Item::Impl(match i.data {
                     syn::Data::Enum(d) => from_enum(i.attrs, i.ident, i.generics, d),

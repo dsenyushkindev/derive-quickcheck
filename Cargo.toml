@@ -15,7 +15,6 @@ build = "build.rs"
 proc-macro = true
 
 [dependencies]
-breadth-first-zip = ">=0.3.0"
 heck = ">=0.4"
 proc-macro2 = ">=1"
 quote = ">=1"
